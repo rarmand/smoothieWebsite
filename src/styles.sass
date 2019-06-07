@@ -1,0 +1,129 @@
+$siteBgColor: #F5F5F5
+$firstBgColor: #FFE477
+$secondBgColor: #97C416
+$thirdBgColor: #BFE39A
+
+$infoDivHeight: 400px
+$fontFamily: 'Kodchasan', sans-serif
+$fontFamilySmall: 'Open Sans', sans-serif
+
+$fontBigger: 56px
+$fontBig: 42px
+$fontMedium: 28px
+$fontSmall: 18px
+$fontSmaller: 12px
+
+$fontColor: #50271C
+
+@mixin displayFlex($direction: column, $justify: flex-start, $align: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align
+  justify-content: $justify
+
+body
+  font-family: $fontFamily
+  color: $fontColor
+  background-color: $siteBgColor
+  height: 100%
+  margin: 0
+
+#root
+  flex-grow: 1
+  min-height: 100vh
+
+header
+  @include displayFlex(row, center)
+  flex-wrap: wrap
+  padding: 40px 0
+
+  h1
+    font-size: $fontBig
+    font-weight: bolder
+
+  svg
+    width: 100px
+
+main
+  .mainContent
+    @include displayFlex()
+    background-color: $firstBgColor
+    height: $infoDivHeight - 100px
+    padding: 50px 0
+
+    span
+      font-size: $fontSmall
+      font-family: $fontFamilySmall
+    h2
+      margin: 15px 0
+      font-size: $fontBigger
+
+    .smoothieIcons
+      @include displayFlex(row, center, center)
+
+  .infoContent
+    @include displayFlex(row, stretch, center)
+    height: 600px
+
+    .infoText
+      @include displayFlex(column, flex-start, right)
+      flex: 1
+      min-width: 320px
+      padding: 0 4%
+      h3
+        font-size: $fontMedium
+      span
+        font-family: $fontFamilySmall
+        padding: 20px 0
+        line-height: 1.2
+
+    .infoImg1
+      background: url("./assets/reimg1.png")
+    .infoImg2
+      background: url("./assets/reimg2.png")
+    .infoImg3
+      background: url("./assets/reimg3.png")
+
+    .infoImg1, .infoImg2, .infoImg3
+      display: flex
+      flex: 1
+      min-width: 50%
+      height: inherit
+      background-size: cover
+
+  .newsletterContent
+    @include displayFlex(column, center, flex-start)
+    background-color: $secondBgColor
+
+    height: 180px
+
+    span
+      margin: 20px 20%
+      font-weight: bold
+      font-size: $fontMedium - 4px
+
+    span:nth-last-child(1)
+      font-size: $fontSmaller + 2px
+      margin-top: 10px
+      font-family: $fontFamilySmall
+      font-weight: normal
+
+    input
+      width: 360px
+      background-color: $thirdBgColor
+      color: $fontColor
+      font-family: $fontFamilySmall
+      font-size: $fontSmall - 2px
+      border: none
+      padding: 8px 10px
+      margin: 0 20%
+
+footer
+  @include displayFlex()
+  font-family: $fontFamilySmall
+  font-size: $fontSmaller
+  padding: 15px 0
+
+  span
+    margin: 8px 0
+
