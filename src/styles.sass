@@ -1,0 +1,136 @@
+@import "data.sass"
+
+@mixin displayFlex($direction: column, $justify: flex-start, $align: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align
+  justify-content: $justify
+
+body
+  font-family: $fontFamilyText
+  color: $fontColor
+  background-color: $siteBgColor
+  height: 100%
+  margin: 0
+
+#root
+  flex-grow: 1
+  min-height: 100vh
+
+header
+  @include displayFlex(row, center)
+  flex-wrap: wrap
+  padding: 40px 0
+
+  h1
+    font-size: $fontBig
+    font-weight: bolder
+    font-family: $fontFamilyTitle
+
+  svg
+    width: 100px
+
+main
+  .netIconMainLeft
+    position: absolute
+    top: 100px
+    left: -200px
+    transform: scale(0.75)
+
+  .netIconMainRight
+    position: absolute
+    top: 100px
+    right: -180px
+
+  .mainContent
+    background-color: $firstBgColor
+    height: $titleDivHeight
+    padding: 50px 0
+
+    .mainText
+      @include displayFlex()
+      span
+        font-size: $fontSmall
+      h2
+        margin: 15px 0
+        font-size: $fontBigger
+        font-family: $fontFamilyTitle
+
+    .smoothieIcons
+      @include displayFlex(row, center)
+
+  .infoContent
+    @include displayFlex(row, stretch)
+    height: $infoDivHeight
+
+    .infoText
+      @include displayFlex(column, flex-start, right)
+      flex: 1
+      min-width: 320px
+      padding: 0 4%
+
+      h3
+        font-size: $fontBig
+        font-family: $fontFamilyTitle
+
+      span
+        padding: 20px 0
+        line-height: 1.2
+        font-size: $fontSmall
+
+    .infoImg1
+      background: url("./assets/reimg1.png")
+    .infoImg2
+      background: url("./assets/reimg2.png")
+    .infoImg3
+      background: url("./assets/reimg3.png")
+
+    .infoImg1, .infoImg2, .infoImg3
+      display: flex
+      flex: 1
+      min-width: 50%
+      height: inherit
+      background-size: cover
+
+  .newsletterContent
+    @include displayFlex(row)
+    background-color: $firstBgColor
+    height: 180px
+
+    .netIconNewsletter
+      position: absolute
+      transform: scale(0.4)
+      right: -180px
+
+    .newsletterText
+      @include displayFlex(column, center, flex-start)
+      width: 100%
+      span
+        margin: 20px 20% 20px 20%
+        font-weight: bold
+        font-size: $fontSmall
+        font-family: $fontFamilyTitle
+
+      span:nth-last-child(1)
+        font-family: $fontFamilyText
+        font-size: $fontSmaller + 2px
+        margin-top: 10px
+        font-weight: normal
+
+      input
+        width: 360px
+        background-color: whitesmoke
+        color: $fontColor
+        font-size: $fontSmall - 2px
+        border: none
+        padding: 8px 10px
+        margin: 0 20%
+
+footer
+  @include displayFlex()
+  font-size: $fontSmaller
+  padding: 15px 0
+
+  span
+    margin: 8px 0
+
