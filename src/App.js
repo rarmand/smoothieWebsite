@@ -13,8 +13,11 @@ class App extends React.Component {
             </header>
 
             <main>
-                <Net color="#FDBA12" className="netIconMainLeft" />
-                <Net color="#FDBA12" className="netIconMainRight" />
+                <div className="iconContent">
+                    <Net color="#FDBA12" className="netIconMainLeft" />
+                    <div className="netSpace" />
+                    <Net color="#FDBA12" className="netIconMainRight" />
+                </div>
                 <div className="mainContent">
                     <div className="mainText">
                         <span>Healthy food, healthy life!</span>

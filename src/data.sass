@@ -16,3 +16,9 @@ $fontSmall: 20px
 $fontSmaller: 12px
 
 $fontColor: #50271C
+
+@mixin displayFlex($direction: column, $justify: flex-start, $align: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align
+  justify-content: $justify
