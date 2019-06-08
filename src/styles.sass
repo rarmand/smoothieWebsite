@@ -3,14 +3,15 @@ $firstBgColor: #FFE477
 $secondBgColor: #97C416
 $thirdBgColor: #BFE39A
 
-$infoDivHeight: 400px
-$fontFamily: 'Kodchasan', sans-serif
-$fontFamilySmall: 'Open Sans', sans-serif
+$titleDivHeight: 300px
+$infoDivHeight: 500px
+$fontFamilyTitle: 'Kodchasan', sans-serif
+$fontFamilyText: 'Open Sans', sans-serif
 
 $fontBigger: 56px
 $fontBig: 42px
-$fontMedium: 28px
-$fontSmall: 18px
+$fontMedium: 36px
+$fontSmall: 20px
 $fontSmaller: 12px
 
 $fontColor: #50271C
@@ -22,7 +23,7 @@ $fontColor: #50271C
   justify-content: $justify
 
 body
-  font-family: $fontFamily
+  font-family: $fontFamilyText
   color: $fontColor
   background-color: $siteBgColor
   height: 100%
@@ -40,42 +41,58 @@ header
   h1
     font-size: $fontBig
     font-weight: bolder
+    font-family: $fontFamilyTitle
 
   svg
     width: 100px
 
 main
+  .netIconMainLeft
+    position: absolute
+    top: 100px
+    left: -200px
+    transform: scale(0.75)
+
+  .netIconMainRight
+    position: absolute
+    top: 100px
+    right: -180px
+
   .mainContent
-    @include displayFlex()
     background-color: $firstBgColor
-    height: $infoDivHeight - 100px
+    height: $titleDivHeight
     padding: 50px 0
 
-    span
-      font-size: $fontSmall
-      font-family: $fontFamilySmall
-    h2
-      margin: 15px 0
-      font-size: $fontBigger
+    .mainText
+      @include displayFlex()
+      span
+        font-size: $fontSmall
+      h2
+        margin: 15px 0
+        font-size: $fontBigger
+        font-family: $fontFamilyTitle
 
     .smoothieIcons
-      @include displayFlex(row, center, center)
+      @include displayFlex(row, center)
 
   .infoContent
-    @include displayFlex(row, stretch, center)
-    height: 600px
+    @include displayFlex(row, stretch)
+    height: $infoDivHeight
 
     .infoText
       @include displayFlex(column, flex-start, right)
       flex: 1
       min-width: 320px
       padding: 0 4%
+
       h3
-        font-size: $fontMedium
+        font-size: $fontBig
+        font-family: $fontFamilyTitle
+
       span
-        font-family: $fontFamilySmall
         padding: 20px 0
         line-height: 1.2
+        font-size: $fontSmall
 
     .infoImg1
       background: url("./assets/reimg1.png")
@@ -92,35 +109,40 @@ main
       background-size: cover
 
   .newsletterContent
-    @include displayFlex(column, center, flex-start)
-    background-color: $secondBgColor
-
+    @include displayFlex(row)
+    background-color: $firstBgColor
     height: 180px
 
-    span
-      margin: 20px 20%
-      font-weight: bold
-      font-size: $fontMedium - 4px
+    .netIconNewsletter
+      position: absolute
+      transform: scale(0.4)
+      right: -180px
 
-    span:nth-last-child(1)
-      font-size: $fontSmaller + 2px
-      margin-top: 10px
-      font-family: $fontFamilySmall
-      font-weight: normal
+    .newsletterText
+      @include displayFlex(column, center, flex-start)
+      width: 100%
+      span
+        margin: 20px 20% 20px 20%
+        font-weight: bold
+        font-size: $fontSmall
+        font-family: $fontFamilyTitle
 
-    input
-      width: 360px
-      background-color: $thirdBgColor
-      color: $fontColor
-      font-family: $fontFamilySmall
-      font-size: $fontSmall - 2px
-      border: none
-      padding: 8px 10px
-      margin: 0 20%
+      span:nth-last-child(1)
+        font-size: $fontSmaller + 2px
+        margin-top: 10px
+        font-weight: normal
+
+      input
+        width: 360px
+        background-color: whitesmoke
+        color: $fontColor
+        font-size: $fontSmall - 2px
+        border: none
+        padding: 8px 10px
+        margin: 0 20%
 
 footer
   @include displayFlex()
-  font-family: $fontFamilySmall
   font-size: $fontSmaller
   padding: 15px 0
 
