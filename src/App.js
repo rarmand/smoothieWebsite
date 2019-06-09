@@ -1,11 +1,10 @@
-import React from 'react';
-import './styles.sass';
+import React from "react";
 import Main from "./pages/Main";
 
 class App extends React.Component {
-    render() {
-        return <Main />;
-    }
+  render() {
+    return <Main />;
+  }
 }
 
 export default App;

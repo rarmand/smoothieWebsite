@@ -1,0 +1,72 @@
+@import "../../styles/data"
+
+.infoContent.reverse
+  @media all and (min-width: $mediaMediumSize + 1px)
+    flex-direction: row-reverse
+
+.infoContent
+  @media all and (min-width: $mediaBigSize + 1px)
+    @include displayFlex(row, stretch)
+    height: $infoDivHeight
+
+  @media all and (max-width: $mediaBigSize) and (min-width: $mediaMediumSize + 1px)
+    @include displayFlex(row, stretch)
+    height: $infoDivHeight - 50px
+
+  @media all and (max-width: $mediaMediumSize)
+    @include displayFlex(column, center, stretch)
+    text-align: center
+    height: $infoDivHeight + 300px
+    flex-wrap: wrap
+
+  .infoImg1
+    background: url("../../assets/reimg1.png")
+  .infoImg2
+    background: url("../../assets/reimg2.png")
+  .infoImg3
+    background: url("../../assets/reimg3.png")
+
+  .infoImg1, .infoImg2, .infoImg3
+    display: flex
+    flex: 1
+    order: 2
+    min-width: 50%
+    height: inherit
+    background-size: cover
+
+
+  .infoText
+    order: 1
+    flex: 1
+    min-width: 320px
+    padding: 0 4%
+
+    @media all and (min-width: $mediaBigSize + 1px)
+      @include displayFlex(column, flex-start, right)
+    @media all and (max-width: $mediaBigSize)
+      @include displayFlex(column, center)
+
+    h3
+      font-family: $fontFamilyTitle
+
+      @media all and (min-width: $mediaBigSize + 1px)
+        font-size: $fontBig
+      @media all and (max-width: $mediaBigSize) and (min-width: $mediaSmallSize + 1px)
+        font-size: $fontBig - 6px
+      @media all and (max-width: $mediaSmallSize)
+        font-size: $fontMedium
+
+    span
+      line-height: 1.2
+
+      @media all and (min-width: $mediaBigSize + 1px)
+        font-size: $fontSmall
+        padding: 20px 0
+
+      @media all and (max-width: $mediaBigSize) and (min-width: $mediaSmallSize + 1px)
+        font-size: $fontSmall - 2px
+        padding: 15px 0
+
+      @media all and (max-width: $mediaSmallSize)
+        font-size: $fontSmall - 4px
+        padding: 10px 0

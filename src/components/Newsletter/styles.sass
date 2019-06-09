@@ -1,0 +1,57 @@
+@import "../../styles/data"
+
+.newsletterContent
+  @include displayFlex(row)
+  background-color: $firstBgColor
+  height: 180px
+
+  .netIconNewsletter
+    position: absolute
+    transform: scale(0.4)
+    right: calc(-600px + 30%)
+
+
+  .newsletterText
+    @include displayFlex(column, center, flex-start)
+    width: 100%
+
+    span
+      font-weight: bold
+      font-family: $fontFamilyTitle
+
+      @media all and (min-width: $mediaSmallSize + 1px)
+        margin: 20px 20% 20px 20%
+        font-size: $fontSmall
+
+      @media all and (max-width: $mediaSmallSize)
+        margin: 20px 10% 20px 10%
+        font-size: $fontSmall - 4px
+
+    span:nth-last-child(1)
+      font-family: $fontFamilyText
+      font-weight: normal
+      margin-top: 10px
+
+      @media all and (min-width: $mediaSmallSize + 1px)
+        margin: 20px 20% 20px 20%
+        font-size: $fontSmaller + 2px
+
+      @media all and (max-width: $mediaSmallSize)
+        margin: 20px 10% 20px 10%
+        font-size: $fontSmaller
+
+    input
+      background-color: whitesmoke
+      color: $fontColor
+      border: none
+      padding: 8px 10px
+
+      @media all and (min-width: $mediaSmallSize + 1px)
+        width: 360px
+        margin: 0 20%
+        font-size: $fontSmall - 2px
+
+      @media all and (max-width: $mediaSmallSize)
+        width: 300px
+        margin: 0 10%
+        font-size: $fontSmall - 6px

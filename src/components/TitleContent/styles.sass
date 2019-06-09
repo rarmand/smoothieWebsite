@@ -1,0 +1,41 @@
+@import "../../styles/data"
+
+.titleContent
+  background-color: $firstBgColor
+
+  @media all and (min-width: $mediaSmallSize + 1px)
+    height: $titleDivHeight
+    padding: 50px 0
+
+  @media all and (max-width: $mediaSmallSize) and (min-width: $mediaSmallerSize + 1px)
+    height: $titleDivHeight - 50px
+    padding: 40px 0
+
+  @media all and (max-width: $mediaSmallerSize)
+    height: $titleDivHeight
+    padding: 40px 0
+
+
+  .titleText
+    @include displayFlex()
+    span
+      @media all and (min-width: $mediaSmallSize + 1px)
+        font-size: $fontSmall
+      @media all and (max-width: $mediaSmallSize)
+        font-size: $fontSmall - 6px
+
+    h2
+      font-family: $fontFamilyTitle
+      margin: 15px 0
+
+      @media all and (min-width: $mediaSmallSize + 1px)
+        font-size: $fontBigger
+
+      @media all and (max-width: $mediaSmallSize)
+        font-size: $fontMedium
+        text-align: center
+
+  .smoothieIcons
+    @include displayFlex(row, center)
+    @media all and (max-width: $mediaSmallSize)
+      transform: scale(0.7)
