@@ -1,28 +1,10 @@
 @import "data.sass"
 
-//@media all and (min-width: 860px)
-//@media all and (max-width: 860px) and (min-width: 361px)
-//@media all and (max-width: 360px)
-
-
-@media all and (min-width: 860px)
-  body
-    background-color: $siteBgColor
-
-@media all and (max-width: 860px) and (min-width: 361px)
-  body
-    background-color: coral
-
-@media all and (max-width: 360px)
-  body
-    background-color: aquamarine
-
-
 
 body
   font-family: $fontFamilyText
   color: $fontColor
-  //background-color: $siteBgColor
+  background-color: $siteBgColor
   height: 100%
   margin: 0
   overflow-x: hidden
@@ -40,9 +22,10 @@ header
     font-size: $fontBig
     font-weight: bolder
     font-family: $fontFamilyTitle
-
+    text-align: center
   svg
     width: 100px
+
 
 main
   .iconContent
@@ -59,67 +42,105 @@ main
     .netSpace
       flex-grow: 5
 
+
   .mainContent
     background-color: $firstBgColor
-    height: $titleDivHeight
-    padding: 50px 0
+
+    @media all and (min-width: $mediaSmallSize + 1px)
+      height: $titleDivHeight
+      padding: 50px 0
+
+    @media all and (max-width: $mediaSmallSize) and (min-width: $mediaSmallerSize + 1px)
+      height: $titleDivHeight - 50px
+      padding: 40px 0
+
+    @media all and (max-width: $mediaSmallerSize)
+      height: $titleDivHeight
+      padding: 40px 0
+
 
     .mainText
       @include displayFlex()
       span
-        font-size: $fontSmall
+        @media all and (min-width: $mediaSmallSize + 1px)
+          font-size: $fontSmall
+        @media all and (max-width: $mediaSmallSize)
+          font-size: $fontSmall - 6px
+
       h2
-        margin: 15px 0
-        font-size: $fontBigger
         font-family: $fontFamilyTitle
+        margin: 15px 0
+
+        @media all and (min-width: $mediaSmallSize + 1px)
+          font-size: $fontBigger
+
+        @media all and (max-width: $mediaSmallSize)
+          font-size: $fontMedium
+          text-align: center
 
     .smoothieIcons
       @include displayFlex(row, center)
+      @media all and (max-width: $mediaSmallSize)
+        transform: scale(0.7)
+
+
+
+  .infoContent.reverse
+    @media all and (min-width: $mediaMediumSize + 1px)
+      flex-direction: row-reverse
 
   .infoContent
-    @media all and (min-width: 860px)
+    @media all and (min-width: $mediaBigSize + 1px)
+      @include displayFlex(row, stretch)
       height: $infoDivHeight
-      @include displayFlex(row, stretch)
 
-    @media all and (max-width: 860px) and (min-width: 361px)
-      height: $infoDivHeight - 100px
+    @media all and (max-width: $mediaBigSize) and (min-width: $mediaMediumSize + 1px)
       @include displayFlex(row, stretch)
+      height: $infoDivHeight - 50px
 
-    @media all and (max-width: 360px)
-      height: $infoDivHeight - 100px
-      @include displayFlex(column, stretch)
+    @media all and (max-width: $mediaMediumSize)
+      @include displayFlex(column, center, stretch)
+      text-align: center
+      height: $infoDivHeight + 300px
+      flex-wrap: wrap
 
 
     .infoText
-      @include displayFlex(column, flex-start, right)
+      order: 1
       flex: 1
       min-width: 320px
       padding: 0 4%
 
-      h3
-        @media all and (min-width: 860px)
-          font-size: $fontBig
-        @media all and (max-width: 860px) and (min-width: 361px)
-          font-size: $fontBig - 6px
-        @media all and (max-width: 360px)
-          font-size: $fontBig - 6px
+      @media all and (min-width: $mediaBigSize + 1px)
+        @include displayFlex(column, flex-start, right)
+      @media all and (max-width: $mediaBigSize)
+        @include displayFlex(column, center)
 
+      h3
         font-family: $fontFamilyTitle
+
+        @media all and (min-width: $mediaBigSize + 1px)
+          font-size: $fontBig
+        @media all and (max-width: $mediaBigSize) and (min-width: $mediaSmallSize + 1px)
+          font-size: $fontBig - 6px
+        @media all and (max-width: $mediaSmallSize)
+          font-size: $fontMedium
 
       span
         line-height: 1.2
 
-        @media all and (min-width: 860px)
+        @media all and (min-width: $mediaBigSize + 1px)
           font-size: $fontSmall
           padding: 20px 0
 
-        @media all and (max-width: 860px) and (min-width: 361px)
-          font-size: $fontSmall - 4px
+        @media all and (max-width: $mediaBigSize) and (min-width: $mediaSmallSize + 1px)
+          font-size: $fontSmall - 2px
           padding: 15px 0
 
-        @media all and (max-width: 760px)
+        @media all and (max-width: $mediaSmallSize)
           font-size: $fontSmall - 4px
-          padding: 15px 0
+          padding: 10px 0
+
 
     .infoImg1
       background: url("./assets/reimg1.png")
@@ -131,9 +152,11 @@ main
     .infoImg1, .infoImg2, .infoImg3
       display: flex
       flex: 1
+      order: 2
       min-width: 50%
       height: inherit
       background-size: cover
+
 
   .newsletterContent
     @include displayFlex(row)
@@ -145,30 +168,52 @@ main
       transform: scale(0.4)
       right: calc(-600px + 30%)
 
+
     .newsletterText
       @include displayFlex(column, center, flex-start)
       width: 100%
 
       span
-        margin: 20px 20% 20px 20%
         font-weight: bold
-        font-size: $fontSmall
         font-family: $fontFamilyTitle
+
+        @media all and (min-width: $mediaSmallSize + 1px)
+          margin: 20px 20% 20px 20%
+          font-size: $fontSmall
+
+        @media all and (max-width: $mediaSmallSize)
+          margin: 20px 10% 20px 10%
+          font-size: $fontSmall - 4px
 
       span:nth-last-child(1)
         font-family: $fontFamilyText
-        font-size: $fontSmaller + 2px
-        margin-top: 10px
         font-weight: normal
+        margin-top: 10px
+
+        @media all and (min-width: $mediaSmallSize + 1px)
+          margin: 20px 20% 20px 20%
+          font-size: $fontSmaller + 2px
+
+        @media all and (max-width: $mediaSmallSize)
+          margin: 20px 10% 20px 10%
+          font-size: $fontSmaller
 
       input
-        width: 360px
         background-color: whitesmoke
         color: $fontColor
-        font-size: $fontSmall - 2px
         border: none
         padding: 8px 10px
-        margin: 0 20%
+
+        @media all and (min-width: $mediaSmallSize + 1px)
+          width: 360px
+          margin: 0 20%
+          font-size: $fontSmall - 2px
+
+        @media all and (max-width: $mediaSmallSize)
+          width: 300px
+          margin: 0 10%
+          font-size: $fontSmall - 6px
+
 
 footer
   @include displayFlex()

@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.sass';
 import { ReactComponent as Logo } from './assets/cocktail.svg';
-import Cocktail from './components/Cocktail';
-import Net from './components/Net';
+import Cocktail from './components/icons/Cocktail';
+import Net from './components/icons/Net';
 
 class App extends React.Component {
     render() {
@@ -31,8 +31,7 @@ class App extends React.Component {
                     </div>
                 </div>
                 <div className="infoContent">
-                    <div className="infoImg1">
-                    </div>
+                    <div className="infoImg1" />
                     <div className="infoText">
                         <h3>Healthy fit</h3>
                         <span>We are pleased to introduce an exciting line of healthy, delicious <b>smoothies</b>.</span>
@@ -41,20 +40,18 @@ class App extends React.Component {
                     </div>
                 </div>
 
-                <div className="infoContent">
+                <div className=" reverse infoContent ">
+                    <div className="infoImg2" />
                     <div className="infoText">
                         <h3>Always fresh</h3>
                         <span>We take care about our products providing the freshest</span>
                         <span>and best possible <b>ingredients from local sources</b>.</span>
                         <span>Our mission is to give you a fresh full-pack of <b>vitamins</b> and <b>nutriens</b>.</span>
                     </div>
-                    <div className="infoImg2">
-                    </div>
                 </div>
 
                 <div className="infoContent">
-                    <div className="infoImg3">
-                    </div>
+                    <div className="infoImg3" />
                     <div className="infoText">
                         <h3>Good day!</h3>
                         <span>Our delicious recipes are a great <b>kick start for your day</b></span>
