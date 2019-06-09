@@ -3,7 +3,7 @@
 .newsletterContent
   @include displayFlex(row)
   background-color: $firstBgColor
-  height: 180px
+  height: 240px
 
   .netIconNewsletter
     position: absolute
@@ -54,4 +54,18 @@
       @media all and (max-width: $mediaSmallSize)
         width: 300px
         margin: 0 10%
+        font-size: $fontSmall - 6px
+
+    button
+      background-color: whitesmoke
+      color: $fontColor
+      border: none
+      padding: 8px 16px
+
+      @media all and (min-width: $mediaSmallSize + 1px)
+        margin: 10px 20% 0px 20%
+        font-size: $fontSmall - 2px
+
+      @media all and (max-width: $mediaSmallSize)
+        margin: 10px 10% 0 10%
         font-size: $fontSmall - 6px
