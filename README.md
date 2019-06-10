@@ -9,7 +9,7 @@ Choose a directory for the project.
 
 Download there .zip project and unzip it, or download in terminal, with command:
 
-### `git clone <<< project_git_address >>>
+### `git clone <<< project_git_address >>>`
 
 Next, in terminal, go to the project file
 
