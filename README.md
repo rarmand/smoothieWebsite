@@ -5,13 +5,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Install the project
 
-Download .zip project or with 
+Choose a directory for the project.
 
-### `git pull <project_git_address>
+Download there .zip project and unzip it, or download in terminal, with command:
 
-Next, open terminal, go to the project file
+### `git clone <<< project_git_address >>>
 
-### `cd <path_to the project>`
+Next, in terminal, go to the project file
+
+### `cd ./path_to_chosen_directory/smoothieWebsite/`
+
 
 Install the project with:
 
@@ -31,7 +34,7 @@ or
 
 ### `yarn start`
 
+The website should open in your default browser automatically.
+If not, open [http://localhost:3000](http://localhost:3000)
+
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-
