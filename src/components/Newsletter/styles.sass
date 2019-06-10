@@ -5,17 +5,17 @@
   background-color: $firstBgColor
   height: 240px
 
-  .netIconNewsletter
+  .newsletterContent__netIcon
     position: absolute
     transform: scale(0.5)
     right: calc(-600px + 30%)
 
 
-  .newsletterText
+  .newsletterContent__newsletterText
     @include displayFlex(column, center, flex-start)
     width: 100%
 
-    span
+    .newsletterText__span
       font-weight: bold
       font-family: $fontFamilyTitle
 
@@ -27,7 +27,7 @@
         margin: 20px 10% 20px 10%
         font-size: $fontSmall - 4px
 
-    span:nth-last-child(1)
+    .newsletterText__span:nth-last-child(1)
       font-family: $fontFamilyText
       font-weight: normal
       margin-top: 10px
@@ -40,7 +40,7 @@
         margin: 20px 10% 20px 10%
         font-size: $fontSmaller
 
-    input
+    .newsletterText__input--text
       background-color: whitesmoke
       color: $fontColor
       border: none
@@ -56,7 +56,7 @@
         margin: 0 10%
         font-size: $fontSmall - 6px
 
-    button
+    .newsletterText__button--submit
       background-color: $fontColor
       color: $siteBgColor
       border: none

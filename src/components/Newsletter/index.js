@@ -19,21 +19,28 @@ class Newsletter extends React.Component {
   render() {
     return (
       <div className="newsletterContent">
-        <Net color="#FF7956" className="netIconNewsletter" />
-        <div className="newsletterText">
-          <span>
+        <Net color="#FF7956" className="newsletterContent__netIcon" />
+        <div className="newsletterContent__newsletterText">
+          <span className="newsletterText__span">
             Stay tuned with our promotions, healthy advice and new products!
           </span>
           <input
+            className="newsletterText__input--text"
             placeholder="Email"
             type="text"
             value={this.state.value}
             onChange={this.onInputChange}
           />
-          <button type="button" onClick={this.onButtonClick}>
+          <button
+            className="newsletterText__button--submit"
+            type="button"
+            onClick={this.onButtonClick}
+          >
             Subscribe to newsletter
           </button>
-          <span>You can resign in any time.</span>
+          <span className="newsletterText__span">
+            You can resign in any time.
+          </span>
         </div>
       </div>
     );

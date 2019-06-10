@@ -1,6 +1,5 @@
 import React from "react";
 import Info from "../Info";
-import "./styles.sass";
 
 function InfoContent(props) {
   return (

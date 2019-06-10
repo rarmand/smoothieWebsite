@@ -5,12 +5,16 @@ function Info(props) {
   const { img, title, text, reverse } = props;
 
   return (
-    <div className={reverse ? "infoContent reverse" : "infoContent"}>
+    <div className={reverse ? "infoContent infoContentReverse" : "infoContent"}>
       <div className={img} />
-      <div className="infoText">
-        <h3>{title}</h3>
+      <div className="infoContent__infoText">
+        <h3 className="infoText__h3">{title}</h3>
         {text.map(line => {
-          return <span key={line.id}>{line.text}</span>;
+          return (
+            <span className="infoText__span" key={line.id}>
+              {line.text}
+            </span>
+          );
         })}
       </div>
     </div>

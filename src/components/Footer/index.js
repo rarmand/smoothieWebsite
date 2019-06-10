@@ -4,8 +4,8 @@ import "./styles.sass";
 function Footer() {
   return (
     <footer className="footer">
-      <span>&copy; Copyright Frutti & Veggie</span>
-      <span>
+      <span className="footer__span">&copy; Copyright Frutti & Veggie</span>
+      <span className="footer__span">
         <b>Have a good day!</b>
       </span>
     </footer>

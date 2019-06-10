@@ -4,9 +4,9 @@ import "./styles.sass";
 
 function Logo() {
   return (
-    <header>
-      <LogoIcon className="logo" />
-      <h1 className="mainTitle">Frutti & Veggie</h1>
+    <header className="header">
+      <LogoIcon className="header__logo" />
+      <h1 className="header__h1">Frutti & Veggie</h1>
     </header>
   );
 }
